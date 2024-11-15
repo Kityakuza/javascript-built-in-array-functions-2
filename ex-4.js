@@ -372,6 +372,8 @@ const bills = [
     pointRate: 0.01,
   },
 ];
-
-// Start coding here
-const totalMembers;
+function userName(bills){
+  return new Set(bills.filter((item) => item.member !== null).map((item) => item.member.name)).size;
+}
+const billMembers = userName(bills);
+console.log("Unique Members Count: " + billMembers);
